@@ -27,13 +27,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 "Configuración plugs
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 let NERDTreeQuitOnOpen=1
 let g:lightline = {
-      \'colorscheme':'ayu_dark'}
+      \ 'colorscheme': 'ayu_dark',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [], ['relativepath', 'modified']],
+      \   'right': [['filetype', 'percent', 'lineinfo'], ['gitbranch']]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch':'fugitive#head' 
+      \}
+      \}
 "Autocompletado de comillas, paréntesis...
 inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
