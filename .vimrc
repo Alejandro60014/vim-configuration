@@ -27,6 +27,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdcommenter'
+Plug 'spf13/vim-autoclose'
 call plug#end()
 "Configuración plugs
 colorscheme gruvbox
@@ -42,14 +43,6 @@ let g:lightline = {
       \   'gitbranch':'fugitive#head' 
       \}
       \}
-"Autocompletado de comillas, paréntesis...
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap {<CR> {<CR>}<Esc>0
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
 "Shortcuts plugins
 let mapleader=" "
 nmap <Leader>s <Plug>(easymotion-s2)
