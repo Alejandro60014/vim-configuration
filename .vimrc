@@ -13,9 +13,7 @@ set relativenumber
 set laststatus=2
 set noshowmode
 "Plugins
-
 call plug#begin('~/.vim/plugged')
-
 "Temas
 Plug 'morhetz/gruvbox'
 " IDE
@@ -28,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 "Configuración plugs
 colorscheme gruvbox
@@ -60,6 +59,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <C-t> :FloatermNew --position=topright<CR>
+nnoremap <Leader>ga :Git add -A<CR>
+nnoremap <Leader>gc :Git commit -m
+nnoremap <Leader>gp :Git push<CR>
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
