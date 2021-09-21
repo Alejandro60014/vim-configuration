@@ -54,7 +54,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <C-t> :FloatermNew --position=topright<CR>
 nnoremap <Leader>ga :Git add -A<CR>
 nnoremap <Leader>gc :Git commit -m
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
