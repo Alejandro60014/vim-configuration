@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdcommenter'
 Plug 'spf13/vim-autoclose'
+Plug 'mattn/emmet-vim'
 call plug#end()
 "Configuración plugs
 colorscheme gruvbox
@@ -43,6 +44,8 @@ let g:lightline = {
       \   'gitbranch':'fugitive#head' 
       \}
       \}
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 "Shortcuts plugins
 let mapleader=" "
 nmap <Leader>s <Plug>(easymotion-s2)
@@ -65,6 +68,7 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+let g:user_emmet_leader_key='<C-e>'
 "Personal Shorcuts
 nnoremap <C-s> :w<CR>
 nnoremap <C-q> :wq!<CR>
